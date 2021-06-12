@@ -1,0 +1,16 @@
+version: "3"
+services:
+  jupyter-lab:
+    container_name: jupyter-lab
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../:/src
+    ports:
+      - 8888:8888
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    restart: always
+
+# https://irukanobox.blogspot.com/2020/06/dockerjupyterlab.html
